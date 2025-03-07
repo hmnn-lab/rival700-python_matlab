@@ -10,7 +10,7 @@ This repository contains a Python script (steelseries_buzz.py) to control the ha
 
 ## Prerequisites
 - Operating System: Tested on Linux (Fedora), should work on other platforms with libusb support.
-- Hardware: SteelSeries Rival 700 mouse (VID: 0x1038, PID: 0x1700).
+- Hardware: SteelSeries Rival 700 mouse (VID: 0x1038, PID: 0x1700). [change wherever in the codes your model changes]
 - Python: Version 3.x (e.g., Python 3.11 on Fedora).
 - Dependencies:
   - pyusb: Python USB library.
@@ -27,7 +27,7 @@ This repository contains a Python script (steelseries_buzz.py) to control the ha
   
   Install libusb (required by pyusb):
   ```
-  sudo dnf install libusb libusb-devel #for Fedora
+  sudo dnf install libusb libusb-devel #as per your distro
   ```
 
 2. Set Up USB Permissions
