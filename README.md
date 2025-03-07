@@ -62,51 +62,55 @@ This repository contains a Python script (steelseries_vibration.py) to control t
   - <vibration_type>: A named vibration (e.g., Buzz, Strong) or a number (0–127).
   - <delay_ms>: Delay in milliseconds before the vibration (e.g., 250).
 
-Examples:
-python3 steelseries_vibration.py Buzz 250    # Buzz with 250ms delay
-python3 steelseries_vibration.py Strong 500  # Strong with 500ms delay
+  Examples:
+  ```
+  python3 steelseries_vibration.py Buzz 250    # Buzz with 250ms delay
+  python3 steelseries_vibration.py Strong 500  # Strong with 500ms delay
+  ```
 
-As a Python Module
-Import and use the trigger_vibration function:
-from steelseries_vibration import trigger_vibration
+  As a Python Module
+  Import and use the trigger_vibration function:
+  ```
+  from steelseries_vibration import trigger_vibration
 
-success = trigger_vibration("Buzz", 250)
-if success:
-    print("Vibration triggered!")
-else:
-    print("Failed to trigger vibration.")
+  success = trigger_vibration("Buzz", 250)
+  if success:
+      print("Vibration triggered!")
+  else:
+      print("Failed to trigger vibration.")
+  ```
 
-Vibration Types
-The script supports the following named vibration patterns (matching the original C++ implementation):
-- Strong (0b000001)
-- Soft (0b000010)
-- Sharp (0b000100)
-- Ping (0b001000)
-- Bump (0b000111)
-- Double (0b001010)
-- QuickDouble (0b011011)
-- QuickDoubleSoft (0b100000)
-- QuickTriple (0b001100)
-- Buzz (0b101111)
-- LongBuzz (0b001111)
-- Ring (0b010000)
-- LongButLight (0b111111)
-- LightBuzz (0b110011)
-- Tick (0b011000)
-- Pulse (0b110101)
-- StrongPulse (0b110100)
+## Vibration Types
+  The script supports the following named vibration patterns (matching the original C++ implementation):
+  - Strong (0b000001)
+  - Soft (0b000010)
+  - Sharp (0b000100)
+  - Ping (0b001000)
+  - Bump (0b000111)
+  - Double (0b001010)
+  - QuickDouble (0b011011)
+  - QuickDoubleSoft (0b100000)
+  - QuickTriple (0b001100)
+  - Buzz (0b101111)
+  - LongBuzz (0b001111)
+  - Ring (0b010000)
+  - LongButLight (0b111111)
+  - LightBuzz (0b110011)
+  - Tick (0b011000)
+  - Pulse (0b110101)
+  - StrongPulse (0b110100)
 
-You can also use any integer from 0 to 127 for custom effects. (Each number has a different pattern)
+  You can also use any integer from 0 to 127 for custom effects. (Each number has a different pattern)
 
-Troubleshooting
+## Troubleshooting
 - "Could not find SteelSeries Rival 700": Ensure the mouse is connected (running lsusb should show ID 1038:1700). Adjust idVendor/idProduct in the script if your device differs.
 - "Could not claim interface": Verify the udev rule is active and you have permissions.
 - Python Errors: Ensure pyusb and libusb are installed correctly.
 
-License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgments
+## Acknowledgments
 - Based on the original C++ project SteelSeriesControl (https://github.com/HughPH/SteelSeriesControl) by HughPH.
 - Built with pyusb for USB communication.
 
