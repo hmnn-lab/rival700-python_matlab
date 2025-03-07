@@ -1,11 +1,11 @@
 # SteelSeries Rival 700 Haptic Control
 
-This repository contains a Python script (steelseries_buzz.py) to control the haptic feedback (buzz) of the SteelSeries Rival 700 mouse via USB. It allows you to trigger various buzz patterns with a customizable delay, replicating functionality originally implemented in a C++ project.
+This repository contains a Python script (steelseries_vibration.py) to control the haptic feedback (vibration) of the SteelSeries Rival 700 mouse via USB. It allows you to trigger various vibration patterns with a customizable delay, replicating functionality originally implemented in a C++ project.
 
 ## Features
-- Supports all buzz patterns from the original SteelSeriesControl project (e.g., "Buzz", "Strong", "Pulse").
-- Accepts numeric buzz values (0–127) for custom effects.
-- Configurable delay before triggering the buzz (in milliseconds).
+- Supports all tactile patterns from the original SteelSeriesControl project (e.g., "Buzz", "Strong", "Pulse").
+- Accepts numeric vibration values (0–127) for custom effects.
+- Configurable delay before triggering the vibration (in milliseconds).
 - Pure Python implementation using pyusb for USB communication.
 
 ## Prerequisites
@@ -40,39 +40,44 @@ This repository contains a Python script (steelseries_buzz.py) to control the ha
   SUBSYSTEM=="usb", ATTR{idVendor}=="1038", ATTR{idProduct}=="1700", MODE="0666"
   ```
   Save and exit, then apply:
+  ```
   sudo udevadm control --reload-rules
   sudo udevadm trigger
+  ```
   Unplug and replug the mouse.
 
 4. Clone the Repository
-git clone https://github.com/<your-username>/steelseries-rival700-haptic.git
-cd steelseries-rival700-haptic
+  ```
+  git clone https://github.com/<your-username>/steelseries-rival700-haptic.git
+  cd steelseries-rival700-haptic
+  ```
 
-Usage
+## Usage
 
-Command-Line
-Run the script directly:
-python3 steelseries_buzz.py <buzz_type> <delay_ms>
-- <buzz_type>: A named buzz (e.g., Buzz, Strong) or a number (0–127).
-- <delay_ms>: Delay in milliseconds before the buzz (e.g., 250).
+  Command-Line
+  Run the script directly:
+  ```
+  python3 steelseries_vibration.py <vibration_type> <delay_ms>
+  ```
+  - <vibration_type>: A named vibration (e.g., Buzz, Strong) or a number (0–127).
+  - <delay_ms>: Delay in milliseconds before the vibration (e.g., 250).
 
 Examples:
-python3 steelseries_buzz.py Buzz 250    # Buzz with 250ms delay
-python3 steelseries_buzz.py Strong 500  # Strong buzz with 500ms delay
-python3 steelseries_buzz.py 10 100      # Custom buzz (value 10) with 100ms delay
+python3 steelseries_vibration.py Buzz 250    # Buzz with 250ms delay
+python3 steelseries_vibration.py Strong 500  # Strong with 500ms delay
 
 As a Python Module
-Import and use the trigger_buzz function:
-from steelseries_buzz import trigger_buzz
+Import and use the trigger_vibration function:
+from steelseries_vibration import trigger_vibration
 
-success = trigger_buzz("Buzz", 250)
+success = trigger_vibration("Buzz", 250)
 if success:
-    print("Buzz triggered!")
+    print("Vibration triggered!")
 else:
-    print("Failed to trigger buzz.")
+    print("Failed to trigger vibration.")
 
-Buzz Types
-The script supports the following named buzz patterns (matching the original C++ implementation):
+Vibration Types
+The script supports the following named vibration patterns (matching the original C++ implementation):
 - Strong (0b000001)
 - Soft (0b000010)
 - Sharp (0b000100)
@@ -91,18 +96,12 @@ The script supports the following named buzz patterns (matching the original C++
 - Pulse (0b110101)
 - StrongPulse (0b110100)
 
-You can also use any integer from 0 to 127 for custom effects.
+You can also use any integer from 0 to 127 for custom effects. (Each number has a different pattern)
 
 Troubleshooting
-- "Could not find SteelSeries Rival 700": Ensure the mouse is connected (lsusb should show ID 1038:1700). Adjust idVendor/idProduct in the script if your device differs.
+- "Could not find SteelSeries Rival 700": Ensure the mouse is connected (running lsusb should show ID 1038:1700). Adjust idVendor/idProduct in the script if your device differs.
 - "Could not claim interface": Verify the udev rule is active and you have permissions.
-- No Buzz: Test with sudo python3 steelseries_buzz.py Buzz 250 to rule out permissions; update the udev rule if needed.
 - Python Errors: Ensure pyusb and libusb are installed correctly.
-
-Integration with MATLAB
-This script can be called from MATLAB using the Python integration:
-py.steelseries_buzz.trigger_buzz('Buzz', int32(250))
-See the accompanying MATLAB function triggerBuzz.m for a complete example (not included in this repo).
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -112,7 +111,3 @@ Acknowledgments
 - Built with pyusb for USB communication.
 
 Happy buzzing!
-
---- 
-
-You can copy this text into a file named `README.md` and use it as is. Let me know if you need any adjustments!
