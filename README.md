@@ -27,7 +27,7 @@ This repository contains a Python script (steelseries_buzz.py) to control the ha
   
   Install libusb (required by pyusb):
   ```
-  sudo dnf install libusb libusb-devel (for Fedora)
+  sudo dnf install libusb libusb-devel #for Fedora
   ```
 
 2. Set Up USB Permissions
