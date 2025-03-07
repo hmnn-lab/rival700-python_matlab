@@ -21,24 +21,30 @@ This repository contains a Python script (steelseries_buzz.py) to control the ha
 1. Install Python Dependencies:
 
   Install pyusb:
-  '''
+  ```
   pip install pyusb
-  '''
+  ```
   
   Install libusb (required by pyusb):
+  ```
   sudo dnf install libusb libusb-devel (for Fedora)
+  ```
 
 2. Set Up USB Permissions
   To access the mouse without root privileges, add a udev rule:
+  ```
   sudo nano /etc/udev/rules.d/99-steelseries.rules
+  ```
   Add the following line:
+  ```
   SUBSYSTEM=="usb", ATTR{idVendor}=="1038", ATTR{idProduct}=="1700", MODE="0666"
+  ```
   Save and exit, then apply:
   sudo udevadm control --reload-rules
   sudo udevadm trigger
   Unplug and replug the mouse.
 
-3. Clone the Repository
+4. Clone the Repository
 git clone https://github.com/<your-username>/steelseries-rival700-haptic.git
 cd steelseries-rival700-haptic
 
