@@ -108,7 +108,7 @@ This repository contains a Python script (steelseries_vibration.py) to control t
 - Python Errors: Ensure pyusb and libusb are installed correctly.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 - Based on the original C++ project SteelSeriesControl (https://github.com/HughPH/SteelSeriesControl) by HughPH.
