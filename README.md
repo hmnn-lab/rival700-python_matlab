@@ -80,12 +80,14 @@ This repository contains a [Python script](steelseries_vibration.py) to control 
         print("Failed to trigger vibration.")
     ```
 - MATLAB
-    This script can be called from MATLAB using the Python integration:
-    See the accompanying MATLAB function triggerVibration.m for a complete example
-    Run the script directly from MATLAB (navigate or add the folder to MATLAB path):
-    ```
-    triggerVibration('Buzz',250)    # Buzz with 250ms delay
-    triggerVibration('Strong',500)  # Strong with 500ms delay
+    - This script can be called from MATLAB using the Python integration:
+    - To do this you need to setup python environment in MATLAB. Check [How to Configure Your System to Use Python](https://in.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html).
+    - See the accompanying MATLAB function triggerVibration.m for a complete example
+    - Run the script directly from MATLAB (navigate or add the folder to MATLAB path):
+      ```
+      triggerVibration('Buzz',250)    # Buzz with 250ms delay
+      triggerVibration('Strong',500)  # Strong with 500ms delay
+      ```
 
 ## Vibration Types
   The script supports the following named vibration patterns (matching the original C++ implementation):
