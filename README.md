@@ -1,6 +1,6 @@
 # SteelSeries Rival 700 Haptic Control
 
-This repository contains a [Python script](steelseries_vibration.py) to control the haptic feedback (vibration) of the SteelSeries Rival 700 mouse via USB. It allows you to trigger various vibration patterns with a customizable delay, replicating functionality originally implemented in a C++ project. It also contains a [Matlab code](triggerVibration.m), which can be used with the Python integration.
+This repository contains a [Python script](steelseries_vibration.py) to control the haptic feedback (vibration) of the SteelSeries Rival 700 mouse via USB in Linux. It allows you to trigger various vibration patterns with a customizable delay, replicating functionality originally implemented in a C++ project. It also contains a [Matlab code](triggerVibration.m), which can be used with the Python integration.
 
 ## Features
 - Supports all tactile patterns from the original SteelSeriesControl project (e.g., "Buzz", "Strong", "Pulse").
@@ -10,8 +10,8 @@ This repository contains a [Python script](steelseries_vibration.py) to control 
 
 ## Prerequisites
 - Operating System: Tested on Linux (Fedora), should work on other platforms with libusb support.
-- Hardware: SteelSeries Rival 700 mouse (VID: 0x1038, PID: 0x1700). [change wherever in the codes your model changes]
-- Python: Version 3.x (e.g., Python 3.11 on Fedora).
+- Hardware: SteelSeries Rival 700 mouse (VID: 0x1038, PID: 0x1700). [change wherever your model changes]
+- Python: Version 3.x
 - Dependencies:
   - pyusb: Python USB library.
   - libusb: Backend for pyusb.
