@@ -81,7 +81,7 @@ This repository contains a [Python script](steelseries_vibration.py) to control 
     ```
 - MATLAB
     - This script can be called from MATLAB using the Python integration:
-    - To do this you need to setup python environment in MATLAB. Check [How to Configure Your System to Use Python](https://in.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html).
+    - To do this you need to setup python environment in MATLAB. Follow [How to Configure Your System to Use Python](https://in.mathworks.com/help/matlab/matlab_external/install-supported-python-implementation.html).
     - See the accompanying MATLAB function triggerVibration.m for a complete example
     - Run the script directly from MATLAB (navigate or add the folder to MATLAB path):
       ```
